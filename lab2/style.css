@@ -4,4 +4,12 @@ body{
     background-color: rgb(144, 174, 184);
     color: rgb(140, 104, 199);
     font-family: Arial;
+    margin: 0px;
+}
+header{
+    background-color: black;
+    color: rgb(10, 173, 18);
+    padding: 10px;
+    font-size: 16pt;
+    text-align: center;
 }
