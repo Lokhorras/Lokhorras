@@ -13,3 +13,12 @@ header{
     font-size: 16pt;
     text-align: center;
 }
+footer{
+    background-color: black;   
+    color: aliceblue;
+    font-size: 15pt;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+    font-style: italic
+}
