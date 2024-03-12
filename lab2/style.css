@@ -30,3 +30,8 @@ span{
     border-radius: 5px;
 
 }
+sup{
+    color: red;
+    font-style: italic;
+    background-color: rgb(182, 211, 17);
+}
