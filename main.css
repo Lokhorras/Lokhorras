@@ -1,0 +1,16 @@
+body{
+    background-color: lightblue;
+    color: rgb(156, 51, 51);
+    font-family:Arial;
+    margin: 0px;
+}
+
+main{
+    background-color:beige;
+    color: rgb(27, 26, 26);
+}
+
+footer{
+    background-color:rgb(93, 68, 153);
+    color: rgb(243, 105, 100);
+}
