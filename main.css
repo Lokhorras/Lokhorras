@@ -1,16 +1,92 @@
-body{
+header{
     background-color: lightblue;
     color: rgb(156, 51, 51);
     font-family:Arial;
     margin: 0px;
+    padding: 0px;
 }
 
 main{
     background-color:beige;
     color: rgb(27, 26, 26);
+    margin: 0px;
 }
 
 footer{
     background-color:rgb(93, 68, 153);
     color: rgb(243, 105, 100);
+    margin: 0px;
+}
+
+.part1{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    line-height: 1.5em;
+    padding: 5px;
+    text-align: justify;
+}
+
+h1{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+body{ margin: 0px;
+
+}
+
+.part2{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
+    text-shadow: 4px 2px 3px rgba(43, 43, 201, 0.5);
+    
+}
+
+.part3{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
+    text-shadow: 4px 2px 3px rgba(61, 160, 199, 0.5);  
+}
+
+.part4{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
+    text-shadow: 4px 2px 3px rgba(238, 255, 0, 0.5);  
+}
+
+.part5{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
+}
+
+
+.part6{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
+}
+
+
+
+.part7{
+    color: rgb(50, 55, 131);
+    font-size: 17px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 0px;
 }
