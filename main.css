@@ -22,19 +22,20 @@ footer{
 a{
     color: green;
     text-decoration: none;
+    transition: 0.5s 2s;
 }
-
-
 a:link {
     color: blue;
 }
 a:visited {
     color: green;
+    
 }
 a:hover {
     color: rgb(255, 0, 0);
     text-decoration: underline;
     text-decoration: none;
+    transition: 0.3s;
 }
 a:active {
     color: rgb(0, 0, 0);
