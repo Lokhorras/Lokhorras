@@ -18,6 +18,53 @@ footer{
     margin: 0px;
 }
 
+
+a{
+    color: green;
+    text-decoration: none;
+}
+
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    color: rgb(255, 0, 0);
+    text-decoration: underline;
+    text-decoration: none;
+}
+a:active {
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .part1{
     color: rgb(50, 55, 131);
     font-size: 17px;
