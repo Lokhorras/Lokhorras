@@ -7,7 +7,7 @@ header{
 }
 
 main{
-    background-color:beige;
+
     color: rgb(27, 26, 26);
 
     margin: 10px 20px 45px ;
@@ -66,91 +66,14 @@ a:active {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.part1{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    line-height: 1.5em;
-    padding: 5px;
-    text-align: justify;
-}
-
 h1{
     margin: 0px;
     padding: 0px;
     text-align: center;
 }
 
-body{ margin: 0px;
-
-}
-
-.part2{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
+body{ 
     margin: 0px;
-    text-shadow: 4px 2px 3px rgba(43, 43, 201, 0.5);
-    
+    background-color:beige;
 }
 
-.part3{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
-    margin: 0px;
-    text-shadow: 4px 2px 3px rgba(61, 160, 199, 0.5);  
-}
-
-.part4{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
-    margin: 0px;
-    text-shadow: 4px 2px 3px rgba(238, 255, 0, 0.5);  
-}
-
-.part5{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
-    margin: 0px;
-}
-
-
-.part6{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
-    margin: 0px;
-}
-
-
-
-.part7{
-    color: rgb(50, 55, 131);
-    font-size: 17px;
-    padding: 5px;
-    line-height: 1.5em;
-    margin: 0px;
-}
