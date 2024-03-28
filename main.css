@@ -43,11 +43,22 @@ a:active {
     text-decoration: none;
 }
 
+.menu{
+    border: 7px solid #8d257380;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0px auto;
+    background-color: bisque;
+    
+}
 
 
 
-
-
+.menu:hover{
+    border: 7px solid #5f3f8a80;
+    background-color: #335ead80;
+    box-shadow: 1 1 15px rgba(173, 0, 0, 0.188)
+}
 
 
 
