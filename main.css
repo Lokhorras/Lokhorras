@@ -9,13 +9,18 @@ header{
 main{
     background-color:beige;
     color: rgb(27, 26, 26);
-    margin: 0px;
+
+    margin: 10px 20px 45px ;
 }
 
 footer{
     background-color:rgb(93, 68, 153);
     color: rgb(243, 105, 100);
     margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right:0;
+    left: 0;
 }
 
 
@@ -49,7 +54,7 @@ a:active {
     width: 300px;
     margin: 0px auto;
     background-color: bisque;
-    
+
 }
 
 
