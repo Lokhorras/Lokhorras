@@ -24,6 +24,12 @@
                 text-align: center;
                 line-height: 30px;
             }
+            #️output{
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
+
+            }
         </style>
         <script>
             function showSum() {
@@ -67,6 +73,13 @@
                 let result = a / b;
                 alert('Деление ' + a + ' и ' + b + ' равно ' + result);
             }
+
+            {
+                function changeOutput(){
+                    let output = document.getElementById('output');
+                    output.innerHTML = "Нажата кнопка 1";
+                }
+            }
         </script>
     </head>
 
@@ -84,6 +97,14 @@
             <div class="message" onclick="difference()">Найти разность чисел</div>
             <div class="message" onclick="composition()">Найти произведение чисел</div>
             <div class="message" onclick="division()">Найти деление чисел</div>
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput()">
+                <input type="button" value="Кнопка 2">
+                <input type="button" value="Кнопка 3">
+                <input type="button" value="Кнопка 4">
+            </div>
+            <div id="output"></div>
 
         </main>
 
