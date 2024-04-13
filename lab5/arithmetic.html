@@ -75,9 +75,12 @@
             }
 
             {
-                function changeOutput(){
+                function changeOutput(buttonNum, backColor, textColor, textBorder){
                     let output = document.getElementById('output');
-                    output.innerHTML = "Нажата кнопка 1";
+                    output.innerHTML = "Нажата кнопка" + buttonNum;
+                    output.style.backgroundColor = backColor;
+                    output.style.color = textColor;
+                    output.style.borderStyle = textBorder;
                 }
             }
         </script>
@@ -99,10 +102,10 @@
             <div class="message" onclick="division()">Найти деление чисел</div>
 
             <div>
-                <input type="button" value="Кнопка 1" onclick="changeOutput()">
-                <input type="button" value="Кнопка 2">
-                <input type="button" value="Кнопка 3">
-                <input type="button" value="Кнопка 4">
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, '#A52A2A', 'yellow', 'outset')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime','dotted')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#F0808080', '#008080','solid')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#BC8F8F', '#9400D3','double')">
             </div>
             <div id="output"></div>
 
