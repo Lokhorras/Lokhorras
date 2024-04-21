@@ -8,7 +8,21 @@
         <link rel="icon" href="../favicon-16x16.png">
         <link rel="icon" href="../favicon-32x32.png">
     </head>
+    <style>
+        div{
 
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function blurChange(){
+            let value = document.getElementById('blurValue').value + 'px';
+            document.getElementById('blurOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'blur(' + value +')';
+        }
+
+    </script>
     <body>
         <header>
             НГТУ, ФБ, Лабораторная работа 5
@@ -16,10 +30,14 @@
             </header>
 
         <main>
-            <p><a href="../lab5/arithmetic.html">Калькулятор</a></p>
-            <p><a href="../lab5/сart.html">Корзина</a></p>
-            <p><a href="../lab5/circles.html">Круги</a></p>
-            <p><a href="../lab5/filters.html">Круги</a></p>
+            <div>
+                Фильтр blur:
+                <input type="range"  value="0" min="0" max="20" onchange="blurChange()" id="blurValue">
+
+                <span id="blurOutput"></span>
+
+            </div>
+            <div class="img"><img src="55.jpg" id="blurImage"></div>
         </main>
 
         <footer>
