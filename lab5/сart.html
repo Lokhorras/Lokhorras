@@ -17,7 +17,6 @@
                 color: rgb(129, 23, 50);
             }
             .btn{
-
                 margin-top: 30px;
             }
             .info{
@@ -32,7 +31,6 @@
                 margin-left: -15px;
             }
             .inpt2{
-
                 width: 250px;
             }
         </style>
@@ -83,14 +81,14 @@
                     Яблоки (100р/шт):
                 </div>
                 <div class="inpt">
-                    <input type="number"  placeholder = "Сколько?" min="0" id="apple">
+                    <input type="number"  placeholder = "Сколько?"  min="0" oninput="value = Math.max(value, 0)" id="apple">
                 </div>
                 <div class="info">
                     <div class="text1">
                         Груши (80р/шт):
                     </div>
                     <div class="inpt">
-                        <input type="number" placeholder = "Сколько?" min="0" id="pears">
+                        <input type="number" placeholder = "Сколько?" min="0" oninput="value = Math.max(value, 0)" id="pears">
                     </div>
                 </div>
 
@@ -99,7 +97,7 @@
                         Апельсины (150р/шт):
                     </div>
                     <div class="inpt">
-                        <input type="number" placeholder = "Сколько?" min="0" id="oranges">
+                        <input type="number" placeholder = "Сколько?" min="0" oninput="value = Math.max(value, 0)" id="oranges">
                     </div>
                 </div>
 
@@ -108,7 +106,7 @@
                         Дыни (300р/шт):
                     </div>
                     <div class="inpt">
-                        <input type="number" placeholder = "Сколько?" min="0" id="melons">
+                        <input type="number" placeholder = "Сколько?" min="0" oninput="value = Math.max(value, 0)" id="melons">
                     </div>
                     <div class="btn">
                         <input type="button" value="Расчитать" onclick="showSum()"> 
