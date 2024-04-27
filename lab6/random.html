@@ -10,7 +10,7 @@
 
     <style>
         .game{
-            width: 250px;
+            width: 300px;
             text-align: center;
             margin-top: 25px;
             margin-left: auto ;
@@ -23,10 +23,10 @@
     </style>
 
     <script>
-        let count = 0;
         let number;
+        let count = 0;
         function startGame(){
-            number = Math.floor(Math.random()* 100) + 1 ;
+            number = Math.floor(Math.random() * 100) + 1 ;
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
@@ -36,7 +36,7 @@
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
-            if (userNumber < result) {
+            if (userNumber > number) {
                 message.innerHTML = 'Вы ввели слишком большое число';
             }
             else if (userNumber < number){
@@ -51,13 +51,16 @@
 
             }
         }
-        function again(params) {
-            let screens = document.getElementById('game');
-            screens[1].style.display = 'block';
+
+        function again() {
+            let screens = document.getElementsByClassName('game');
             screens[2].style.display = 'none';
-            number = Math.floor(Math.random()* 100) + 1;
-            let count = 0;
+            screens[1].style.display = 'block';
+            number = Math.floor(Math.random() * 100) + 1;
+            count = 0;
+            document.getElementById('result').innerHTML = '';
         }
+
     </script>
 </head>
 
