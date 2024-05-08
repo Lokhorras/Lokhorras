@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
-    <link rel = "stylesheet" href= "../main.css">
+    <link rel = "stylesheet" href= "../lab6/main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
 
     <style>
         .game{
-            width: 250px;
+            width: 300px;
             text-align: center;
             margin-top: 25px;
             margin-left: auto ;
@@ -19,44 +19,87 @@
             color: rgb(60, 60, 185);
             border-radius: 30px;
         }
+        .help {
+
+            position: fixed;
+            bottom: 50px;
+            background-color: rgb(165, 202, 202);
+            border-radius: 8px;
+            color: rgb(208, 64, 24);
+            font-family: monospace;
+            font-size: 16px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
     </style>
 
     <script>
-        let count = 0;
         let number;
+        let count = 0;
         function startGame(){
-            number = Math.floor(Math.random()* 100) + 1 ;
+            number = Math.floor(Math.random() * 100) + 1 ;
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
         }
-        function guess(){
-            count++;
+        function guess() {
             let input = document.getElementById('user-number');
-            let userNumber = parseInt(input.value);
+            let userNumber = input.value.trim(); 
+            if (userNumber == "") {
+                document.getElementById('result').innerHTML = 'Поле не должно быть пустым!';
+                return;
+            }
+            if (isNaN(userNumber)) {
+                document.getElementById('result').innerHTML = 'Введите число!';
+                return; 
+            }
+            userNumber = parseInt(userNumber);
+            count++;
             let message = document.getElementById('result');
-            if (userNumber < result) {
+            if (userNumber < 1 || userNumber > 100) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+                return;
+            }
+            if (userNumber > number) {
                 message.innerHTML = 'Вы ввели слишком большое число';
-            }
-            else if (userNumber < number){
-                message.innerHTML = 'Вы ввели слишком маленькое число'
-            }
-            else{
+            } else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } else {
                 let screens = document.getElementsByClassName('game');
                 screens[1].style.display = 'none';
                 screens[2].style.display = 'block';
                 document.getElementById('number').innerHTML = number;
                 document.getElementById('try-count').innerHTML = count;
-
             }
         }
-        function again(params) {
-            let screens = document.getElementById('game');
-            screens[1].style.display = 'block';
+        function again() {
+            let screens = document.getElementsByClassName('game');
             screens[2].style.display = 'none';
-            number = Math.floor(Math.random()* 100) + 1;
-            let count = 0;
+            screens[1].style.display = 'block';
+            number = Math.floor(Math.random() * 100) + 1;
+            count = 0;
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function showRules() {
+            let helpScreen = document.getElementsByClassName('help')[0];
+            let gameScreen = document.getElementsByClassName('game')[0];
+            let showRulesButton = document.getElementsByClassName('game')[3];
+            let hideRulesButton = document.getElementById('hideRulesButton');
+            helpScreen.style.display = 'block';
+            gameScreen.style.display = 'none';
+            showRulesButton.style.display = 'none';
+            hideRulesButton.style.display = 'block';
+        }
+        
+        function hideRules() {
+            let helpScreen = document.getElementsByClassName('help')[0];
+            let showRulesButton = document.getElementsByClassName('game')[3];
+            let hideRulesButton = document.getElementById('hideRulesButton');
+            helpScreen.style.display = 'none';
+            hideRulesButton.style.display = 'none';
+            showRulesButton.style.display = 'block';
         }
     </script>
 </head>
@@ -96,6 +139,21 @@
             <div>
                 <button onclick="again()"> Сыграть ещё раз  </button>
             </div>
+        </div>
+        <div class="help" style="display: none;">
+            <h2>Правила игры</h2>
+            <ol type="I">
+                <li>Нажмите на кнопку 'Сыграть в игру'</li>
+                <li>Введите число в диапазоне от 1 до 100</li>
+                <li>Если число не угадано, введите число больше или меньше введенного</li>
+                <li>Если угадали число, вы выиграли</li>
+                <li>Если хотите начать сначала, нажмите кнопку 'Сыграть ещё раз'</li>
+            </ol>
+            <button id="hideRulesButton" onclick="hideRules()" style="display: none;">Скрыть правила игры</button>
+        </div>
+        
+        <div class="game">
+            <button onclick="showRules()">Показать правила игры</button>
         </div>
     </main>
 

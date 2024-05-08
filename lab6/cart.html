@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
+    <link rel = "stylesheet" href= "../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .cart{
+            border: solid;
+            border-radius: 5px;
+            width: 350px;
+            margin-left: 800px;
+        }
+        tr{
+            text-align: left;
+        }
+        th{
+            font-family: monospace;
+            font-size: 18px;
+        }
+        tr{
+            font-family: monospace;
+            font-size: 18px;
+        }
+        div{
+            font-family: monospace;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, ЛАБА 3
+    </header>
+    <main>
+
+        <div class="cart">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Чехол</td>
+                        <td>100р</td>
+                        <td><input type="number" id="product1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Визитка</td>
+                        <td>135р</td>
+                        <td><input type="number" id="product2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Калькулятор</td>
+                        <td>300р</td>
+                        <td><input type="number" id="product3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Майка</td>
+                        <td>740р</td>
+                        <td><input type="number" id="product4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Колонка</td>
+                        <td>1000р</td>
+                        <td><input type="number" id="product5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Фильтп</td>
+                        <td>50р</td>
+                        <td><input type="number" id="product6" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Рыба</td>
+                        <td>300р</td>
+                        <td><input type="number" id="product7" value="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="balance">
+                <label for="balance">Мой баланс:</label>
+                <input type="number" id="balance" value="10000" readonly>
+            </div>
+            <div id="totalCost">Итоговая сумма: 0р</div> 
+            <button class="ok-button" onclick="checkout()">ОК</button>
+        </div>
+    </main>
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+    <script>
+        function checkout() {
+            const balance = parseInt(document.getElementById('balance').value);
+            let totalCost = 0;
+            let hasProducts = false; 
+        
+            const products = [
+                { id: 'product1', price: 100 },
+                { id: 'product2', price: 135 },
+                { id: 'product3', price: 300 },
+                { id: 'product4', price: 740 },
+                { id: 'product5', price: 1000 },
+                { id: 'product6', price: 50 },
+                { id: 'product7', price: 300 }
+            ];
+        
+            for (let product of products) {
+                const quantity = parseInt(document.getElementById(product.id).value);
+                if (quantity < 0) { 
+                    alert(`Количество товара "${product.id}" должно быть неотрицательным числом.`);
+                    return;
+                }
+                if (quantity > 0) {
+                    hasProducts = true;
+                    totalCost += product.price * quantity;
+                }
+            }
+
+            if (!hasProducts) {
+                alert('Выберите хотя бы один товар для оформления заказа.');
+                return;
+            }
+
+            // Обновление итоговой суммы
+            document.getElementById('totalCost').textContent = `Итоговая сумма: ${totalCost}р`;
+
+            if (totalCost > balance) {
+                alert('Недостаточно средств на балансе для оформления заказа.');
+            } else {
+                alert('Заказ успешно оформлен!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
+    <link rel = "stylesheet" href= "../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <style>
+        .color {
+            width: 500px;
+            height: 200px;
+            margin: 20px;
+            border: 5px solid #000;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 30px;
+            text-align: center;
+            font-family: monospace;
+            transition: background-color 0.8s, color 0.8s;
+        }
+    </style>
+
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'красный';
+            } else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'чёрный';
+            } else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'purple';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            } else if (div.style.backgroundColor == 'purple') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'зелёный';
+            } else if (div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'gray';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'серый';
+            } else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, ЛАБА 3
+    </header>
+
+    <main>
+        <div id="color-block" class="color" ondblclick="changeColor(this)" style="background-color: yellow; color: black;">
+            Цвет: <span id="color-name"> желтый</span><br>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
