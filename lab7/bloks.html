@@ -3,45 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
-    <link rel = "stylesheet" href= "../lab6/main.css">
+    <link rel="stylesheet" href="../lab6/main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
     <script>
-        function addNewBlock(){
+        function addNewBlock() {
             let newBlock = document.createElement('div');
             newBlock.style.backgroundColor = 'green';
             newBlock.style.height = '40px';
-            newBlock.style.border = 'solid'
-            newBlock.style.borderColor = 'red'
-            newBlock.style.margin = '5px'
+            newBlock.style.border = 'solid';
+            newBlock.style.borderColor = 'red';
+            newBlock.style.margin = '5px';
+            newBlock.style.borderRadius = '8px';
+            newBlock.style.width = '100px'; 
             document.querySelector('main').appendChild(newBlock);
+        }
+
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let width = 100; 
+            let numberOfBlocks = document.getElementById('numberOfBlocks').value;
+            for (let i = 0; i < numberOfBlocks; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.border = 'solid';
+                newBlock.style.borderColor = 'red';
+                newBlock.style.borderRadius = '8px';
+                newBlock.style.margin = '5px';
+                newBlock.style.width = width + 'px'; 
+                width += 10; 
+                newBlock.innerHTML = `block № ${i + 1}: 2 * ${i}<sup>2</sup> = ${2 * i ** 2}`;
+                main.appendChild(newBlock);
+                
+            }
         }
     </script>
     <style>
-        button{
+        button {
             background-color: antiquewhite;
             border-color: aqua;
             border-radius: 8px;
             width: 250px;
             height: 50px;
         }
-        main{
+        main {
             text-align: center;
         }
     </style>
 </head>
-
 <body>
-    
     <header>
-
         НГТУ, ФБ, ЛАБА 3
     </header>
 
-
     <main>
         <button onclick="addNewBlock()">Добавить блок</button>
+        Введите чиcло: <input type="number" id="numberOfBlocks">
+        <button onclick="addNewBlocks()">Добавить блоки</button>
 
     </main>
 
