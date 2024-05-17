@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link href = "fonts/roboto/stylesheet.css" rel = "stylesheet" type = "text/css" />
+    <title> biocad </title>
+    <style>
+        a{
+            text-decoration: none;
+            font-family: "Roboto";
+            font-size: 16px;
+            line-height: 20px;
+            cursor: pointer;
+            color: #000000;
+            padding-right: 15px;
+        }
+        .img11{
+            background-image:url('10.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            padding-bottom: 120px;
+        }
+        .hnews{
+            font-size: 15px;
+
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+        }
+        .date{
+            font-size: 12px;
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+        }
+        .preview{
+            font-size: 12px;
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+        }
+        .full-news{
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+        }
+        .show-button {
+            display: block;
+            margin: 10px auto;
+        }
+        .logo{
+            color: #000000;
+        }
+        .lang{
+            color: #000000;
+        }
+        .trigger span{
+        background-color: #000000;
+        }
+        .preview-line {
+            font-size: 12px;
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+            margin-bottom: 10px; /* Добавляем отступ снизу для отображения одной строки текста */
+        }
+        .show-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF; /* Синий цвет, соответствующий стандартной кнопке */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+        }
+        .show-button:hover {
+            background-color: #0056b3; /* Темно-синий цвет при наведении */
+        }
+        .show-button:active {
+            background-color: #004085; /* Темнее синего цвета при нажатии */
+        }
+        .show-button:focus {
+            outline: none; /* Убираем обводку фокуса */
+        }
+        .full-news {
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            color: #0c204d;
+            margin-top: 10px; /* Добавляем отступ сверху для кнопки "Показать" */
+        }
+        .news-card1 {
+            background-color: #F0F0F0; 
+            text-align: center;
+            border: solid;
+            border-radius: 8px;
+            width: 500px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 100px;
+            margin-bottom: 20px;
+        }
+        .cont1{
+            width: 1850px;
+            height: 197px;
+        }
+        .cont2{
+            padding-top: 100px;
+            height: 212px;
+            width: 1850px;
+        }
+        * {
+            scrollbar-color: #0067bb hsla(0, 0%, 100%, .2);
+            scrollbar-width: thin;
+
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        footer{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+<div class="img11">
+    <header>
+        <div class="container-grid">
+            <div class="logo-main">
+                <a class="logo" href="main2.html">BIOCAD</a>
+            </div>
+            <ul class="menu">
+                <li class="sub hidden">
+                    <button class="buttons">
+                        <a href="main2.html">О компании</a>
+                    </button>
+                </li>
+                <li class="sub hidden">
+                    <button class="buttons">
+                        <a class="active" href="news.html">Новости</a>
+                    </button>
+                </li>
+                <li class="sub hidden">
+                    <button class="buttons">
+                        <a href="calc.html">Курс Валют</a>
+                    </button>
+                </li>
+                <li class="sub hidden">
+                    <button class="buttons">
+                        <a href="numbers.html">Контактные Данные</a>
+                    </button>
+                </li>
+                <li class="sub hidden">
+                    <button class="buttons">
+                        <a href="videos.html">Видео</a>
+                    </button>
+                </li>
+                
+            </ul>
+            <div class="grid-buttons">
+                <a href="https://biocadglobal.com/?utm_source=biocad.ru&amp;utm_medium=referral&amp;utm_campaign=biocad_referral&amp;utm_reffere=biocad.ru" 
+                target="_blank" rel="noopener noreferrer" class="lang">Eng</a>
+                <label for="search">
+                    <button class="button-white">
+                        <img class='img1' src="4.png">
+                    </button>
+                </label>
+                <div class="buter">
+                    <button class="trigger" aria-label="Trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <hr>
+        <div class="cont1">
+            <div class="news-card1" id="news-card-1">
+                <h2 class="hnews">В России зарегистрировали первый в мире препарат, способный остановить развитие болезни Бехтерева</h2>
+                <p class="date">Опубликовано: 25.04.2024</p>
+                <!-- Добавьте еще один элемент для отображения одной строки текста -->
+                <p class="preview-line">Министерство здравоохранения РФ зарегистрировало..</p>
+                <!-- Кнопка "Показать" и полный текст новости -->
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Министерство здравоохранения Российской Федерации зарегистрировало первый в классе оригинальный 
+                        препарат для терапии пациентов с рентгенологическим аксиальным спондилоартритом (болезнь Бехтерева), разработанный 
+                        биотехнологической компанией BIOCAD совместно с учеными РНИМУ им. Н. И. Пирогова. 
+                        Механизм действия инновационной разработки уникален и не имеет аналогов в мире. 
+                    </p>
+                </div>
+            </div>
+            <div class="news-card1" id="news-card-2">
+                <h2 class="hnews">Два оригинальных препарата BIOCAD для терапии рассеянного склероза включены в перечни ЖНВЛП и ВЗН</h2>
+                <p class="date">Опубликовано: 22.04.2024</p>
+                <p class="preview-line">Правительство РФ расширило перечни «Жизненно необходимых и важнейших лекарственных препаратов» (ЖНВЛП), 
+                    и лекарственных...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Правительство Российской Федерации расширило перечни «Жизненно необходимых и важнейших лекарственных препаратов» (ЖНВЛП),
+                        и лекарственных препаратов, применяемых при лечении «Высокозатратных нозологий». В них включены первые российские оригинальные 
+                        препараты для терапии рассеянного склероза Ивлизи® и Тенексиа®, разработанные биотехнологической компанией BIOCAD. </p>
+                </div>
+            </div>
+            
+            <div class="news-card1" id="news-card-3">
+                <h2 class="hnews">Врачи Школы практической онкологии им. Андрея Павленко посетили производственный комплекс BIOCAD</h2>
+                <p class="date">Опубликовано: 27.04.2024</p>
+                <p class="preview-line">3 апреля научно-производственный комплекс биотехнологической компании BIOCAD в Стрельне посетили резиденты и наставники Школы практической...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>3 апреля научно-производственный комплекс биотехнологической компании BIOCAD в Стрельне посетили резиденты и наставники Школы практической онкологии им. Андрея Павленко.
+                        Участники встречи узнали о ключевых этапах разработки инновационных лекарственных препаратов для терапии онкологических заболеваний. </p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div class="cont2">
+            <div class="news-card1" id="news-card-4">
+                <h2 class="hnews">ВОЗ присвоила оригинальному препарату BCD-180 международное непатентованное наименование сенипрутуг</h2>
+                <p class="date">Опубликовано:03.04.2024</p>
+                <p class="preview-line">Всемирная организация здравоохранения присвоила оригинальному препарату BCD-180, предназначенному для терапии рентгенологического аксиального...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Всемирная организация здравоохранения присвоила оригинальному препарату BCD-180, предназначенному для терапии 
+                        рентгенологического аксиального спондилоартрита 
+                        (р-аксСпА, болезнь Бехтерева), международное непатентованное наименование (МНН) сенипрутуг (seniprutug).   
+                    </p>
+                </div>
+            </div>
+            <div class="news-card1" id="news-card-5">
+                <h2 class="hnews">BIOCAD приступает к клиническому исследованию инновационного препарата для терапии болезни Крона и язвенного колита</h2>
+                <p class="date">Опубликовано: 26.04.2024</p>
+                <p class="preview-line">Биотехнологическая компания BIOCAD получила разрешение Минздрава России на проведение клинического исследования нового оригинального...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Биотехнологическая компания BIOCAD получила разрешение Минздрава России на проведение клинического исследования нового оригинального препарата 
+                        BCD-261, предназначенного для терапии воспалительных заболеваний кишечника — болезни Крона и язвенного колита среднетяжелого и тяжелого течения. 
+                        Участие в исследовании I фазы смогут принять здоровые мужчины в возрасте от 18 до 45 лет включительно.</p>
+                </div>
+            </div>
+            
+            <div class="news-card1" id="news-card-6">
+                <h2 class="hnews">BIOCAD обнародовал результаты клинического исследования инновационного препарата для терапии болезни Бехтерева</h2>
+                <p class="date">Опубликовано: 27.04.2024</p>
+                <p class="preview-line">Биотехнологическая компания BIOCAD представила результаты клинического исследования II фазы ELEFTA, в рамках которого оценена эффективность...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Биотехнологическая компания BIOCAD представила результаты клинического исследования II фазы ELEFTA, 
+                        в рамках которого оценена эффективность и безопасность первого в классе препарата BCD-180 (МНН сенипрутуг) 
+                        для терапии рентгенологического аксиального спондилоартрита (болезнь Бехтерева).
+                        Статья с результатами исследования опубликована в ведущем российском научном журнале «Научно-практическая ревматология». </p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div class="cont2">
+            <div class="news-card1" id="news-card-7">
+                <h2 class="hnews">BIOCAD объявила о старте третьего сезона Всероссийского грантового конкурса «Наука добра»</h2>
+                <p class="date">Опубликовано:03.04.2024</p>
+                <p class="preview-line">Биотехнологическая компания BIOCAD запускает третий сезон грантового конкурса «Наука добра». Участие в нем могут принять некоммерческие организации...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Биотехнологическая компания BIOCAD запускает третий сезон грантового конкурса «Наука добра». 
+                        Участие в нем могут принять некоммерческие организации, чьи социальные проекты направлены на повышение качества жизни пациентов, профилактику и раннюю диагностику онкологических, 
+                        аутоиммунных и редких генетических заболеваний. Грантовый фонд конкурса — пять миллионов рублей.   
+                    </p>
+                </div>
+            </div>
+            <div class="news-card1" id="news-card-8">
+                <h2 class="hnews">BIOCAD стал лидером рейтинга влиятельности издания «Фармацевтический вестник»</h2>
+                <p class="date">Опубликовано: 26.04.2024</p>
+                <p class="preview-line">BIOCAD признан победителем в номинации «Фармацевтическая компания, оказавшая наибольшее влияние на развитие фармацевтического рынка в 2023...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>BIOCAD признан победителем в номинации «Фармацевтическая компания, оказавшая наибольшее влияние на развитие фармацевтического рынка в 2023 году».</p>
+                </div>
+            </div>
+            
+            <div class="news-card1" id="news-card-9">
+                <h2 class="hnews">BIOCAD обнародовал результаты клинического исследования инновационного препарата для терапии болезни Бехтерева</h2>
+                <p class="date">Опубликовано: 27.04.2024</p>
+                <p class="preview-line">Биотехнологическая компания BIOCAD представила результаты клинического исследования II фазы ELEFTA, в рамках которого оценена эффективность...</p>
+                <button class="show-button">Показать</button>
+                <div class="full-news hidden">
+                    <p>Биотехнологическая компания BIOCAD представила результаты клинического исследования II фазы ELEFTA, 
+                        в рамках которого оценена эффективность и безопасность первого в классе препарата BCD-180 (МНН сенипрутуг) 
+                        для терапии рентгенологического аксиального спондилоартрита (болезнь Бехтерева).
+                        Статья с результатами исследования опубликована в ведущем российском научном журнале «Научно-практическая ревматология». </p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+
+</div>
+    <footer>
+        <hr>
+
+        <div class="bottomgrid">
+            <h1 class="hfooter"> logo </h1>
+            <p class="hfooter">&copy;Copyright © 2001-2024</p>
+        </div>
+
+        
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let isMenuVisible = false;
+            const triggerButton = document.querySelector('.trigger');
+            const subMenuItems = document.querySelectorAll('.sub.hidden');
+
+            triggerButton.addEventListener('click', function() {
+                isMenuVisible = !isMenuVisible;
+                subMenuItems.forEach(item => {
+                    item.classList.toggle('hidden', !isMenuVisible);
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const showButtons = document.querySelectorAll('.show-button');
+        
+            showButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const newsCard = this.closest('.news-card1'); // Находим ближайший родительский элемент с классом .news-card1
+                    const fullNews = newsCard.querySelector('.full-news'); // Находим элемент с классом .full-news внутри ближайшей новости
+                    const previewLine = newsCard.querySelector('.preview-line'); // Находим элемент с классом .preview-line внутри ближайшей новости
+        
+                    // Проверяем, скрыт ли полный текст новости
+                    if (fullNews.classList.contains('hidden')) {
+                        // Если скрыт, то показываем полный текст и скрываем текст превью
+                        fullNews.classList.remove('hidden');
+                        previewLine.classList.add('hidden');
+                        this.textContent = 'Скрыть'; // Изменяем текст кнопки на "Скрыть"
+                    } else {
+                        // Если показывается полный текст, то скрываем его и показываем текст превью
+                        fullNews.classList.add('hidden');
+                        previewLine.classList.remove('hidden');
+                        this.textContent = 'Показать'; // Изменяем текст кнопки на "Показать"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

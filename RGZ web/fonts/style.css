@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Biocad Display';
+    src: local('Biocad Display Bold'), local('Biocad-Display-Bold'),
+        url('BiocadDisplay-Bold.woff2') format('woff2'),
+        url('BiocadDisplay-Bold.woff') format('woff'),
+        url('BiocadDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
