@@ -54,6 +54,27 @@
                 main.appendChild(newBlock);
             }
         }
+        function add10_80() {
+            let main = document.querySelector('main');
+            // Создаем отступ перед кружками
+            let spacer = document.createElement('div');
+            spacer.style.clear = 'both'; // Очищаем обтекание для новой строки
+            main.appendChild(spacer);
+            for(let i = 10; i>=-80; i-=3){
+                let newBlock = document.createElement('div')
+                newBlock.style.width = '20px';
+                newBlock.style.height = '20px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.margin = '5px'
+                newBlock.style.borderColor = 'lime';
+                newBlock.style.backgroundColor = 'white';
+                newBlock.style.lineHeight = '20px'; 
+                newBlock.style.textAlign = 'center';
+                newBlock.style.display = 'inline-block'; 
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
         button {
@@ -66,6 +87,7 @@
         main {
             text-align: center;
         }
+
     </style>
 </head>
 <body>
@@ -78,6 +100,7 @@
         Введите чиcло: <input type="number" id="numberOfBlocks">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">>20 => 50</button>
+        <button onclick="add10_80()" class="circle-container" >10 => -80</button>
     </main>
 
     <footer>
