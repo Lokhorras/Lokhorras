@@ -95,6 +95,24 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function createColorfulCircles() {
+            let main = document.querySelector('main');
+            let numberOfCircles = document.getElementById('numberOfCircles').value;
+            for (let i = parseInt(numberOfCircles); i >= 1; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.style.width = '40px';
+                newCircle.style.height = '40px';
+                newCircle.style.borderRadius = '50%';
+                newCircle.innerHTML = i;
+                newCircle.style.margin = '5px';
+                newCircle.style.display = 'inline-block';
+                newCircle.style.textAlign = 'center';
+                newCircle.style.lineHeight = '40px';
+                newCircle.style.backgroundColor = i % 2 === 0 ? 'green' : 'red'; // Цвет по четности
+                main.appendChild(newCircle);
+            }
+        }
     </script>
     <style>
         button {
@@ -122,6 +140,10 @@
         <button onclick="add20_50()">>20 => 50</button>
         <button onclick="add10_80()" class="circle-container" >10 => -80</button>
         <button onclick="opacity_blocks()" >Полупрозрачные блоки</button>
+        <p>        Введите количество кругов: <input type="number" id="numberOfCircles">
+            <button onclick="createColorfulCircles()">Цветные круги</button>
+        </p>
+
     </main>
 
     <footer>
