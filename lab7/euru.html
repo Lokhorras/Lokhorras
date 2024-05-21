@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        h2{
+            font-family: monospace;
+            font-size: 18px;
+            color: rgb(79, 88, 172);
+        }
+        p{
+            font-family: monospace;
+            font-size: 18px;
+            color: rgb(79, 88, 172);
+        }
+        .exchange-rate-info{
+            margin: 50px 750px;
+            width: 500px;
+
+        }
+        button{
+            margin: 0px 680px;
+            background-color: rgb(138, 129, 129);
+        }
+
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const currentRate = data.Valute.EUR.Value;
+                    const previousRate = data.Valute.EUR.Previous;
+                    const difference = currentRate - previousRate;
+                    const message = difference > 0 ? 'Курс евро поднялся' : 'Курс евро опустился';
+                    const rateInfo = `
+                        <div class="exchange-rate-info">
+                            <h2>Курс евро</h2>
+                            <p>Дата запроса: ${data.Date}</p>
+                            <p>Текущий курс: ${currentRate}</p>
+                            <p>Прошлый курс: ${previousRate}</p>
+                            <p>Разница: ${difference.toFixed(2)} (${message})</p>
+                        </div>
+                    `;
+                    document.getElementById('exchange-rate').innerHTML = rateInfo;
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, ЛАБА 3
+    </header>
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="exchange-rate"></div>
+    </main>
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
