@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+<style>
+body {
+    color: rgb(101, 101, 199);
+
+    font-family: monospace;
+
+}
+.weather-info {
+    margin: 50px 750px;
+    font-family: monospace;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+h1{
+    margin: 50px 750px;
+    font-family: monospace;
+    margin-bottom: 20px;
+}
+</style>
+<script>
+    const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+    
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+        const times = data.hourly.time;
+        const temperatures = data.hourly.temperature_2m;
+    
+        const today = new Date().toISOString().split('T')[0];
+        const morningIndex = times.indexOf(`${today}T08:00`);
+        const afternoonIndex = times.indexOf(`${today}T12:00`);
+        const eveningIndex = times.indexOf(`${today}T20:00`);
+    
+        document.getElementById('morning-temp').textContent = `Утром: ${temperatures[morningIndex]} °C`;
+        document.getElementById('afternoon-temp').textContent = `Днем: ${temperatures[afternoonIndex]} °C`;
+        document.getElementById('evening-temp').textContent = `Вечером: ${temperatures[eveningIndex]} °C`;
+        })
+        .catch(error => {
+        console.error('Ошибка при получении данных:', error);
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, ЛАБА 3
+    </header>
+
+    <main>
+        <h1>Погода в Новосибирске</h1>
+        <div id="weather-data">
+        <div class="weather-info" id="morning-temp"></div>
+        <div class="weather-info" id="afternoon-temp"></div>
+        <div class="weather-info" id="evening-temp"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+
+
+</body>
+</html>
