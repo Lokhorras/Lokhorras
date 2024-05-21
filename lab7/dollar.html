@@ -7,6 +7,46 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        button{
+            color: #0c204d;
+            background-color: rgb(45, 71, 128);
+            width: 250px;
+        }
+    </style>
+    <script>
+        function showExchange() {
+            const exchange = [93.4419, 93.5891, 94.0742, 94.3242, 94.0922, 93.4409, 93.2519, 93.2918, 92.5058, 92.1314];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                td.style.fontFamily = 'monospace'
+                tr.appendChild(td);
+                table.appendChild(tr);
+                table.style.margin = 'auto';
+                table.style.width = '50%';
+                table.style.border = '2px solid ';
+                td.style.border = '2px solid ';
+            }
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            let detail = document.getElementById('detail');
+            detail.innerText = `Среднее значение: ${average}`;
+            detail.style.fontFamily = 'monospace'
+            
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+        }
+    </script>
+
 </head>
 
 
@@ -19,8 +59,9 @@
 
 
     <main>
-        <button onclick="showExcchange()">Курс доллара</button>
+        <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-table"> </table>
+        <div id="detail"></div>
 
 
     </main>
