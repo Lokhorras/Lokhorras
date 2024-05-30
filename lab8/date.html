@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="date.js"></script>
+    <style>
+        main {
+            padding: 20px;
+        }
+        .frame {
+            border: 1px solid #333;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .daysweek {
+            margin-top: 20px;
+        }
+
+        .daysweek label {
+            margin-right: 10px;
+        }
+        .daysweek button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #d4c360;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .daysweek button:hover {
+            background-color: #8db964;
+        }
+    </style>
+</head>
+
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, ЛАБА 8
+    </header>
+
+    <main>
+        <div id="current-date"></div>
+        <div class="daysweek">
+            <label for="day">
+                День: <input type="number" id="day" min="1" max="31" required>
+            </label>
+            <label for="month">
+                Месяц: <input type="number" id="month" min="1" max="12" required>
+            </label>
+            <label for="year">
+                Год: <input type="number" id="year" min="1900" max="2100" required>
+            </label>
+            <button onclick="getDayWeek()">Определить день недели</button>
+            <div id="day-of-week"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+</body>
+</html>

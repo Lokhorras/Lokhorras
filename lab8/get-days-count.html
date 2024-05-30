@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миракин Даниил Вячеславович. Лабораторная работа 8</title>
+    <link rel = "stylesheet" href= "../lab6/main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        .dates {
+            text-align: center;
+            padding: 30px;
+            width: 500px;
+            height: 450px;
+            margin: auto;
+            margin-top: 50px;
+            border: solid;
+            border-color: blue;
+            line-height: 4;
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #countDays{
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button{
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #d4c360;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        input{
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, ЛАБА 8
+    </header>
+    <main>
+        <div class="dates">
+            <div>
+                <label for="birthday">Дата рождения: <input type="date" id="birthday"></label>
+            </div>
+            <div>
+                <button onclick="SHOWDAYS()">Показать число дней</button>
+            </div>
+            <button onclick="CLEARR()">Очистить поля ввода и выводы</button>
+            <div id="countDays"></div>
+        </div>
+    </main>
+    </main>
+    <footer>
+        &copy; Миракин Даниил, фби-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
